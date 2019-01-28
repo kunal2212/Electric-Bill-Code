@@ -13,10 +13,14 @@ public class CalculateElectricity {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		ElectricityBill("MHEP1", 6666, 3);
+		ElectricityBill("MHEP2", 100, 55);
+		ElectricityBill("MHEP3", 250, 120);
 
-		Scanner Sc1 = new Scanner(System.in);
-		System.out.println("Enter the number of Units:");
-		unit = Sc1.nextLong();
+	}
+
+	public static void ElectricityBill(String MeterName, int MonthEndUnit, int MonthStartUnit) {
+		int unit = MonthEndUnit - MonthStartUnit;
 		double UserBillPayAmount = 0;
 		if (unit <= 100) {
 			UserBillPayAmount = unit * 1;
@@ -27,8 +31,7 @@ public class CalculateElectricity {
 		} else if (unit > 500) {
 			UserBillPayAmount = 500 + (unit * 3);
 		}
-
-		System.out.println("User Has TO Pay The Bill for Unit: " + UserBillPayAmount);
-
+		System.out.println("The total Bill for the"+ " "+ MeterName +" "+ "for" + " " + unit +" "+  "is"+" " + UserBillPayAmount);
 	}
+
 }
